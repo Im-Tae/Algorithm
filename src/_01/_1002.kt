@@ -35,7 +35,7 @@ fun calculate(x1: Int, y1: Int, r1: Int, x2: Int, y2: Int, r2: Int): Int {
         if (r1 == r2) -1
         else 0
     else if ((r1 + r2) > i && abs(r1 - r2) < i) 2
-    else if ((r1 + r2).toDouble() == i) 1
+    else if ((r1 + r2).toDouble() == i || abs(r1 - r2).toDouble() == i) 1
     else 0
 }
 
