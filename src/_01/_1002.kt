@@ -1,7 +1,7 @@
 package _01
 
 import java.util.*
-import kotlin.math.sqrt
+import kotlin.math.*
 
 // i = √{ (x1 - x2)^2 + (y1 - y2)^2 }
 
@@ -17,11 +17,11 @@ import kotlin.math.sqrt
 val scanner = Scanner(System.`in`)
 val count = getNum()
 
-var result = arrayListOf(count)
+var result = IntArray(count)
 
 fun main() {
 
-    for (i in 0 until count) result.add(calculate(getNum(), getNum(), getNum(), getNum(), getNum(), getNum()))
+    for (i in 0 until count) result[i] = calculate(getNum(), getNum(), getNum(), getNum(), getNum(), getNum())
 
     for (element in result) println(element)
 }
@@ -34,9 +34,9 @@ fun calculate(x1: Int, y1: Int, r1: Int, x2: Int, y2: Int, r2: Int): Int {
     return if (x1 == x2 && y1 == y2)
         if (r1 == r2) -1
         else 0
-    else if ((r1 + r2) > i && Math.abs(r1 - r2) < i) 2
+    else if ((r1 + r2) > i && abs(r1 - r2) < i) 2
     else if ((r1 + r2).toDouble() == i) 1
     else 0
 }
 
-fun getI(x1: Int, y1: Int, x2: Int, y2: Int): Double = Math.sqrt(Math.pow((x2 - x1).toDouble(), 2.0) + Math.pow((y2 - y1).toDouble(), 2.0))
+fun getI(x1: Int, y1: Int, x2: Int, y2: Int): Double = sqrt((x2 - x1).toDouble().pow(2.0) + (y2 - y1).toDouble().pow(2.0))
